@@ -1,0 +1,88 @@
+package MOBI;
+
+public class Stack_array_implementation 
+{
+
+	int top;
+	int size;
+	int [] stack;
+	
+	Stack_array_implementation()
+	{
+		top=-1;
+		size=10;
+		stack = new int [size];
+	}
+	
+	public boolean isEmpty()
+	{
+		return top==-1;
+	}
+	
+	public boolean isFull()
+	{
+		return top== size-1;
+	}
+	
+	
+	public int push(int data)
+	{
+		if(isFull())
+		{
+			System.out.println("The Stack is full");
+		}
+		return stack[++top]=data;
+	}
+	
+	
+	public int pop()
+	{
+		if(isEmpty())
+		{
+			System.out.println("The Stack is empty");
+		}
+		return stack[top--];
+	}
+	
+	
+	public int peek()
+	{
+		return stack[top];
+	}
+	
+	public void disp()
+	{
+		for( int i:stack)
+		{
+			System.out.print(i+" ");
+		}
+	}
+	
+	public static void main(String[] args) 
+	{
+		Stack_array_implementation obj=new Stack_array_implementation();
+		
+		System.out.println(obj.isEmpty());
+		System.out.println(obj.isFull());
+		
+		obj.push(15);
+		obj.push(25);
+		obj.push(35);
+		obj.push(45);
+		obj.push(55);
+		
+		System.out.println("\nAn elements in stack");
+		obj.disp();
+		
+		System.out.println("\nThe top Element in stack");
+		System.out.println(obj.peek());
+		
+		System.out.println("\nThe Top element remove from stack");
+		System.out.println(obj.pop());
+		
+		System.out.println("\nThe top element in stack");
+		System.out.println(obj.peek());
+		
+	}
+
+}
