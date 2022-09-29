@@ -1,0 +1,109 @@
+package MOBI;
+
+import java.util.*;
+
+public class Queuee 
+{
+	
+	static int front;
+	static int size;
+	int Queue [] ;
+	
+	Queuee ()
+	{
+		front=-1;
+		
+		size=10;
+		Queue=new int [size];
+	}
+	
+	
+	
+	public boolean isEmpty()
+	{
+		return front==-1;
+	}
+	
+	public boolean isFull()
+	{
+		return front>=size-1;
+	}
+	
+	
+	
+	public void offer(int data)
+	{
+		if(isFull())
+		{
+			System.out.println("The Queue is full");
+		}
+		else
+		{
+			Queue[++front]=data;
+		}
+	}
+	
+	public int poll()
+	{
+		if(isEmpty())
+		{
+			System.out.println("The queue is empty");
+		}
+		return Queue[front--];
+	}
+	
+	public void disp()
+	{
+		if(isEmpty())
+		{
+			System.out.println("The Queue is empty");
+		}
+		else
+		{
+			for( int i:Queue)
+			{
+				System.out.print(i+" ");
+			}
+		}
+	}
+	
+	
+	
+
+	public static void main(String[] args) 
+	{
+		
+		Scanner ob=new Scanner (System.in);
+		
+		Queuee obj=new Queuee();
+		
+		System.out.println(obj.isEmpty());
+		
+		
+		obj.offer(153);
+		obj.offer(13);
+		obj.offer(53);
+		obj.offer(15);
+		obj.offer(95);
+		obj.offer(85);
+		obj.offer(65);
+		obj.offer(953);
+		obj.offer(152);
+		obj.offer(125);
+		
+		
+		
+		
+		
+		System.out.println("An elements in Queue");
+		obj.disp();
+		
+		System.out.println("\nRemoving the element from queue");
+		System.out.println(obj.poll());
+		
+		
+		
+		
+	}
+
+}
